@@ -1,0 +1,14 @@
+{
+    "name": "lum1nat/inizio-entry",
+    "description": "entry test inizio",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lum1naT",
+            "email": "47953544+Lum1naT@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "2.7.3"
+    }
+}
