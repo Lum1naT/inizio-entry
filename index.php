@@ -14,7 +14,7 @@
     <h1>
     <?php
     echo "Hello World";
-    include_once 'databaseManager.php';
+    include_once './databaseManager.php';
     ?>
     </h1>
 
