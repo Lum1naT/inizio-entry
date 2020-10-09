@@ -2,7 +2,7 @@
 require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
 
-echo "\n include succ.";
+echo "\r include succ.";
 
 $connectionParams = array(
     'url' => getenv('PGSQL_DATABASE_URL'),
@@ -13,5 +13,10 @@ $conn = ORM::getConnection($connectionParams);
 
 if(!empty($conn)){
     echo "\n Connected succ.";
-    print_r($conn);
 }
+
+$data = "<dtt:Kod>9</dtt:Kod>";
+$t = time();
+
+$count = $conn->insert('firma', array('ico' => '9087089', 'published' => date("d-m-Y h:i:s",$t), 'data' => $data));;
+echo "\r inserted {{$count}} rows";
