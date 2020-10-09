@@ -1,8 +1,8 @@
 <?php
-// namespace \vendor;
+namespace app\vendor;
 use \Doctrine\DBAL\DriverManager as ORM;
 
-echo "include succ.";
+echo "\n include succ.";
 
 $connectionParams = array(
     'url' => $_ENV('CLEARDB_DATABASE_URL'),
@@ -10,6 +10,6 @@ $connectionParams = array(
 $conn = ORM::getConnection($connectionParams);
 
 if(!empty($conn)){
-    echo "Connected succ.";
+    echo "\n Connected succ.";
     print_r($conn);
 }
