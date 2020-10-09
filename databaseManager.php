@@ -1,12 +1,12 @@
 <?php
-require Doctrine\DBAL\DriverManager;
+require '\Doctrine\DBAL\DriverManager';
 
 echo "include succ.";
 
 $connectionParams = array(
     'url' => $_ENV('CLEARDB_DATABASE_URL'),
 );
-$conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams);
+$conn = DriverManager::getConnection($connectionParams);
 
 if(!empty($conn)){
     echo "Connected succ.";
