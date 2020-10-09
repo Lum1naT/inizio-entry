@@ -5,8 +5,8 @@ use \Doctrine\DBAL\DriverManager as ORM;
 echo "\n include succ.";
 
 $connectionParams = array(
-    'url' => getenv('CLEARDB_DATABASE_URL'),
-    'driver' => 'pdo_mysql',
+    'url' => getenv('PGSQL_DATABASE_URL'),
+    'driver' => 'pdo_pgsql',
 
 );
 $conn = ORM::getConnection($connectionParams);
