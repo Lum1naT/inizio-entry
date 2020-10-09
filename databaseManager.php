@@ -2,10 +2,11 @@
 require Doctrine\DBAL\DriverManager;
 
 $connectionParams = array(
-    'url' => 'mysql://bdaa096600bffd:24eff3d4@eu-cdbr-west-03.cleardb.net/heroku_5c9e28cdaa57eac?reconnect=true',
+    'url' => $_ENV('CLEARDB_DATABASE_URL'),
 );
 $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams);
 
 if(!empty($conn)){
+    echo "Connected succ.";
     print_r($conn);
 }
