@@ -6,6 +6,8 @@ echo "\n include succ.";
 
 $connectionParams = array(
     'url' => getenv('CLEARDB_DATABASE_URL'),
+    'driver' => 'pdo_mysql',
+
 );
 $conn = ORM::getConnection($connectionParams);
 
