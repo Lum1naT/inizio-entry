@@ -5,7 +5,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
 echo "\n include succ.";
 
 $connectionParams = array(
-    'url' => $_ENV('CLEARDB_DATABASE_URL'),
+    'url' => $_ENV['CLEARDB_DATABASE_URL'],
 );
 $conn = ORM::getConnection($connectionParams);
 
