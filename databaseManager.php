@@ -1,5 +1,5 @@
 <?php
-namespace app\vendor;
+require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
 
 echo "\n include succ.";
