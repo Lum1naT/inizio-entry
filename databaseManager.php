@@ -1,6 +1,8 @@
 <?php
 require Doctrine\DBAL\DriverManager;
 
+echo "include succ.";
+
 $connectionParams = array(
     'url' => $_ENV('CLEARDB_DATABASE_URL'),
 );
