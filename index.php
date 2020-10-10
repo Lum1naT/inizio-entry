@@ -16,9 +16,7 @@
     echo "Hello World";
     include_once './databaseManager.php';
     echo "<br>";
-    var_dump(parse_url($url, PHP_URL_PATH));
-    echo "<br>";
-    var_dump(parse_url($url, PHP_URL_FRAGMENT));
+    echo $_GET['page'];
 
     ?>
     </h1>
