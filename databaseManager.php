@@ -18,5 +18,5 @@ if(!empty($conn)){
 $data = "<dtt:Kod>9</dtt:Kod>";
 $t = time();
 
-$count = $conn->insert('firma', array('ico' => '9087089', 'published' => date("d-m-Y h:i:s",$t), 'data' => $data));
-echo "\r inserted {{$count}} rows";
+// $count = $conn->insert('firma', array('ico' => '9087089', 'published' => date("d-m-Y h:i:s",$t), 'data' => $data));
+// echo "\r inserted {{$count}} rows";
