@@ -85,7 +85,7 @@ $(document).ready(function(){
       $('input[name=ulice]').val(data.ulice);
       $('input[name=mesto]').val(data.mesto);
       $('input[name=psc]').val(data.psc);
-      alert('Název a sídlo firmy bylo vyplněno z databáze ARES.');
+      alert('Název a sídlo firmy bylo vyplněno z databáze ARES.' + data.firma);
      } else {
       alert(data.stav);
      }
