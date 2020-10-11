@@ -36,7 +36,8 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <form action="/formHandler.php" method="post">
     <div class="form-group">
     <label for="exampleInputEmail1">IČO: </label>
-    <input name="ico" class="form-control" type="text" pattern="[0-9]+" id="ico" placeholder="Zadejte IČO">
+    <input name="ico" class="form-control" type="text" pattern="[0-9]+" id="ico" placeholder="Zadejte IČO" required>
+    <input name="ctrl" type="hidden" value="inizioentry">
     </div>
     <button type="submit" class="btn btn-primary">Hledat</button>
     
@@ -94,7 +95,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      
+    <form action="" method="get">
+    <div class="form-group">
+    <input name="firma" class="form-control" type="text" id="firma" placeholder="Hledat dle firmy"> <button type="submit" class="btn btn-primary">Hledat</button>
+    </div>
+    
     </div>
     <div class="col-sm">
 
@@ -102,11 +107,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
         </div>
     <div class="col-sm">
     
-    <form action="<?php $_SERVER['SERVER_URI'] ?>" method="get">
-    <div class="form-group">
-    <input name="firma" class="form-control" type="text" id="firma" placeholder="Hledat dle firmy">
-    </div>
-    <button type="submit" class="btn btn-primary">Hledat</button>
+   
     
     </form>
     </div>

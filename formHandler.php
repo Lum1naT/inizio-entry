@@ -8,7 +8,7 @@ header("Content-Type: application/json; charset=UTF-8");
 define('ARES','http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=');
 date_default_timezone_set('Europe/Prague');
 
-
+if($_POST['ctrl'] == 'inizioentry'){
 $ico = intval($_POST['ico']);
 $file = @file_get_contents(ARES.$ico);
 if ($file) $xml = @simplexml_load_string($file);
@@ -63,4 +63,7 @@ try {
     throw $a["state"]." Error:".$th;
 }
 
-//echo json_encode($a);
+} else {
+    echo "Chyba. Zkuste to prosím znovu.";
+}
+
