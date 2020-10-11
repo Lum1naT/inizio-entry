@@ -6,6 +6,8 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
 header("Content-Type: application/json; charset=UTF-8");
 define('ARES','http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=');
+date_default_timezone_set('Europe/Prague');
+
 
 $ico = intval($_POST['ico']);
 $file = @file_get_contents(ARES.$ico);
@@ -55,8 +57,8 @@ try {
                                             'street' => $a['street'],
                                             'city' => $a['city'],
                                             'zip' => $a['zip']));
-    echo "\r inserted {{$count}} rows";
-
+                                            
+  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1');
 } catch (\Throwable $th) {
     throw $a["state"]." Error:".$th;
 }
