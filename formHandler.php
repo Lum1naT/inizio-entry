@@ -47,6 +47,7 @@ try {
     
     $t = time();
 
+
     $count = $conn->insert('firma', array('ico' => $a['ico'], 
                                             'published' => date("d-m-Y h:i:s",$t),
                                             'dic' => $a['dic'],                                           

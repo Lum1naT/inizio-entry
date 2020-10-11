@@ -11,10 +11,7 @@
     <title>Inizio IČO entry</title>
   </head>
   <body>
-    <?php
-    
-
-    ?>
+   
 
     <form action="/formHandler.php" method="post">
     <div class="form-group">
@@ -24,6 +21,67 @@
     <button type="submit" class="btn btn-primary">Hledat</button>
     
     </form>
+
+  <?php 
+   try {
+    $connectionParams = array(
+      'url' => getenv('PGSQL_DATABASE_URL'),
+      'driver' => 'pdo_pgsql',
+  
+    );
+  $conn = ORM::getConnection($connectionParams);
+  
+  if(!empty($conn)){
+      echo "Připojeno k DB.";
+  }
+
+   } catch (\Throwable $th) {
+     echo "Připojení k databázi selhalo.\r Error: ". $th;
+   }
+
+   
+  
+  ?>
+
+<div class="container">
+<h1 class="text-center">jQuery Bootstrap Sortable Plugin Demos</h1>
+  <table class="table table-bordered table-striped sortable">
+    <caption>
+    Optional table caption.
+    </caption>
+    <thead>
+      <tr>
+        <th data-defaultsign="_19">#</th>
+        <th data-defaultsign="AZ">First Name</th>
+        <th>Last Name</th>
+        <th data-defaultsign="month">Birthday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-value="1">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td data-dateformat="MM-DD-YYYY">11-11-1970</td>
+      </tr>
+      <tr>
+        <td  data-value="2">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td data-dateformat="MM-DD-YYYY">11-11-1980</td>
+      </tr>
+      <tr>
+        <td data-value="3">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td data-dateformat="MM-DD-YYYY">11-11-1960</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script> 
+  <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Sortable-Bootstrap-Tables-Bootstrap-Sortable/Scripts/bootstrap-sortable.js"></script> 
+</div>
 
     <nav aria-label="Page navigation example">
   <ul class="pagination">
