@@ -126,13 +126,13 @@ use \Doctrine\DBAL\DriverManager as ORM;
   <?php } else { ?>
 <div class="container">
   <div class="row">
-    <div class="col-sm">
+    <div class="col-2">
     </div>
-    <div class="col-sm">
+    <div class="col-8">
     <h2 > V databázi nebyly nalezeny žádné záznamy, zkuste přidat nový </h2>
 
     </div>
-    <div class="col-sm">
+    <div class="col-2">
     </div>
   </div>
 </div>
