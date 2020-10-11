@@ -59,6 +59,7 @@
   </ul>
 </nav>
 
+
 <script type='text/javascript'>
 
 $(document).ready(function(){
@@ -84,6 +85,8 @@ $(document).ready(function(){
     },
    });
   });
+
+  </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
