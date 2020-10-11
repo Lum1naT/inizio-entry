@@ -40,7 +40,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <input name="ico" class="form-control" type="text" pattern="[0-9]+" id="ico" placeholder="Zadejte IČO" required>
     <input name="ctrl" type="hidden" value="inizioentry">
     </div>
-    <small style="color: red;"> <?php echo $_SESSION["error"]; $_SESSION["error"] = ""; ?></small>
+    <small style="color: red;"> <?php echo $_SESSION["error"]; session_unset(); ?></small>
     <button type="submit" class="btn btn-primary">Hledat</button>
     
     </form>
