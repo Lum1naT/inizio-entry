@@ -85,7 +85,6 @@ $(document).ready(function(){
     },
    });
   });
- }
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
