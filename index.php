@@ -2,7 +2,7 @@
 if(empty($_GET['orderBy'])){
   header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1');
 }
-session_start;
+session_start();
 require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
 ?>
