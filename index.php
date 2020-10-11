@@ -24,6 +24,10 @@
     <input name="ico" class="form-control" type="text" pattern="[0-9]+" id="ico" placeholder="Zadejte IČO">
     </div>
     <div class="form-group">
+    <label for="exampleInputEmail1">DIČ</label>
+    <input name="dic" class="form-control" type="text">
+    </div>
+    <div class="form-group">
     <label for="exampleInputEmail1">Firma</label>
     <input name="firma" class="form-control" type="text">
     </div>
