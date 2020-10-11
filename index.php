@@ -118,11 +118,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
     <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI']."&"."page=".($_GET['page']-1); ?>'>Previous</a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo "/orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']-1); ?>'>Previous</a></li>
     <li class="page-item"><a class="page-link" href="/#1">1</a></li>
     <li class="page-item"><a class="page-link" href="/#2">2</a></li>
     <li class="page-item"><a class="page-link" href="/#3">3</a></li>
-    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI']."&"."page=".($_GET['page']+1); ?>'>Next</a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo "/orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']-1); ?>'>Next</a></li>
   </ul>
 </nav>
 
