@@ -1,4 +1,7 @@
 <?php 
+if(empty($_GET['orderBy'])){
+  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name');
+}
 require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
 ?>
@@ -41,8 +44,8 @@ use \Doctrine\DBAL\DriverManager as ORM;
     
         </div>
     <div class="col-sm">
-    <a href="/?orderBy=name"> Seřadit dle jména </a>
-    <a href="/?orderBy=date"> Seřadit dle data vyhledání </a>
+    <a href="/?orderBy=name"> Seřadit dle jména </a><br>
+    <a href="/?orderBy=date"> Seřadit dle data vyhledání </a><br>
 
     </div>
   </div>
@@ -115,11 +118,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
     <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI'].($_GET['page']-1); ?>'>Previous</a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI']."&"($_GET['page']-1); ?>'>Previous</a></li>
     <li class="page-item"><a class="page-link" href="/#1">1</a></li>
     <li class="page-item"><a class="page-link" href="/#2">2</a></li>
     <li class="page-item"><a class="page-link" href="/#3">3</a></li>
-    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI'].($_GET['page']+1); ?>'>Next</a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI']."&"($_GET['page']+1); ?>'>Next</a></li>
   </ul>
 </nav>
 
