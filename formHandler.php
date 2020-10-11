@@ -51,13 +51,13 @@ try {
 
 
     $count = $conn->insert('firma', array('ico' => $a['ico'], 
-                                            'published' => date("d-m-Y h:i:s",$t),
+                                            'published' => date("d-m-Y H:i:s",$t),
                                             'dic' => $a['dic'],                                           
                                             'name' => $a['name'],
                                             'street' => $a['street'],
                                             'city' => $a['city'],
                                             'zip' => $a['zip']));
-                                            
+
   header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1');
 } catch (\Throwable $th) {
     throw $a["state"]." Error:".$th;

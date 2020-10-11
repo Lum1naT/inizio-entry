@@ -108,7 +108,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <?php 
     foreach ($result as $firma) {
       echo "<tr>
-      <td> {$firma['published']} </td>
+      <td data-dateformat='DD-MM-YYYY H:i:s'> {$firma['published']} </td>
       <td> {$firma['ico']} </td>
       <td> {$firma['dic']} </td>
       <td> {$firma['name']} </td>
