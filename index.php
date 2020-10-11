@@ -12,9 +12,7 @@
   </head>
   <body>
     <?php
-    echo "Hello World";
-    include_once './databaseManager.php';
-    echo "<br>";
+    
 
     ?>
 

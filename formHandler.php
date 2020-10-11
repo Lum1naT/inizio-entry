@@ -1,7 +1,12 @@
 <?php
 
+
+require_once('./vendor/autoload.php');
+use \Doctrine\DBAL\DriverManager as ORM;
+
 header("Content-Type: application/json; charset=UTF-8");
 define('ARES','http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=');
+
 $ico = intval($_POST['ico']);
 $file = @file_get_contents(ARES.$ico);
 if ($file) $xml = @simplexml_load_string($file);
@@ -27,5 +32,26 @@ if ($xml) {
 } else
  $a['stav'] 	= 'Databáze ARES není dostupná';
 
-print_r($a);
+try {
+
+    $connectionParams = array(
+        'url' => getenv('PGSQL_DATABASE_URL'),
+        'driver' => 'pdo_pgsql',
+    
+    );
+    $conn = ORM::getConnection($connectionParams);
+    
+    if(!empty($conn)){
+        echo "\n Connected succ.";
+    }
+    
+    $t = time();
+
+    // $count = $conn->insert('firma', array('ico' => '9087089', 'published' => date("d-m-Y h:i:s",$t), 'data' => $data));
+    // echo "\r inserted {{$count}} rows";
+
+} catch (\Throwable $th) {
+    throw $th;
+}
+
 //echo json_encode($a);
