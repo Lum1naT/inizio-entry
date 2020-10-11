@@ -84,7 +84,6 @@ use \Doctrine\DBAL\DriverManager as ORM;
      echo "Připojení k databázi selhalo.\r Error: ". $th;
    }
 
-   $isNotLast = ($_GET['page'] = $totalPages);
   
   ?>
 
@@ -135,7 +134,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
     <li class="page-item active"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']); ?>'><?php echo $_GET['page']; ?></a></li>
 
-    <?php if(!($isNotLast)) { ?>
+    <?php if($_GET["page"] <= $totalPages) { ?>
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+1); ?>'><?php echo $_GET['page']+1; ?></a></li>
 
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+1); ?>'>Next</a></li>
