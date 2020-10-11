@@ -18,7 +18,7 @@ if ($xml) {
  $ns = $xml->getDocNamespaces();
  $data = $xml->children($ns['are']);
  $el = $data->children($ns['D'])->VBAS;
- if(empty(strval($el->OF))){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1'); }
+ if(empty(strval($el->ICO))){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1'); }
  if (strval($el->ICO) == $ico) {
   $a['ico'] 	= strval($el->ICO);
   $a['dic'] 	= strval($el->DIC);
