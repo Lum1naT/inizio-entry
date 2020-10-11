@@ -2,6 +2,7 @@
 if(empty($_GET['orderBy'])){
   header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1');
 }
+session_start;
 require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
 ?>
@@ -39,6 +40,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <input name="ico" class="form-control" type="text" pattern="[0-9]+" id="ico" placeholder="Zadejte IČO" required>
     <input name="ctrl" type="hidden" value="inizioentry">
     </div>
+    <small style="color: red"> <?php echo $_SESSION["error"]; ?></small>
     <button type="submit" class="btn btn-primary">Hledat</button>
     
     </form>

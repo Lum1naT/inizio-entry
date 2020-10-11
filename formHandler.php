@@ -1,5 +1,6 @@
 <?php
 
+session_start;
 
 require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
@@ -17,6 +18,7 @@ if ($xml) {
  $ns = $xml->getDocNamespaces();
  $data = $xml->children($ns['are']);
  $el = $data->children($ns['D'])->VBAS;
+ if(empty(strval($el->OF))){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1'); }
  if (strval($el->ICO) == $ico) {
   $a['ico'] 	= strval($el->ICO);
   $a['dic'] 	= strval($el->DIC);
@@ -29,10 +31,10 @@ if ($xml) {
   $a['city']	= strval($el->AA->N);
   $a['zip']	= strval($el->AA->PSC);
   $a['state'] 	= 'ok';
- } else
-  $a['state'] 	= 'IČ firmy nebylo nalezeno';
+ } else 
+ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';
 } else
- $a['state'] 	= 'Databáze ARES není dostupná';
+$_SESSION["error"] = 'Databáze ARES není dostupná';
 
 try {
 
