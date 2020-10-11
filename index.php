@@ -128,6 +128,13 @@ use \Doctrine\DBAL\DriverManager as ORM;
   <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Sortable-Bootstrap-Tables-Bootstrap-Sortable/Scripts/bootstrap-sortable.js"></script> 
 </div>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+    </div>
+    <div class="col-sm">
     <nav aria-label="Page navigation example">
   <ul class="pagination">
     <?php if($_GET['page'] > 1){ ?>
@@ -144,6 +151,13 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <?php } ?>
   </ul>
 </nav>
+        </div>
+    <div class="col-sm">
+    
+    </div>
+  </div>
+</div>
+    
 
 
 
