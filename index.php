@@ -78,10 +78,10 @@ use \Doctrine\DBAL\DriverManager as ORM;
   }
 
   
-    $query = $em->createQuery('SELECT COUNT(*) FROM firma');
-    $count = $query->getResult(); // array of ForumUser objects
+    $companies = $conn->fetchAll('SELECT * FROM firma');
+
   
-  $totalPages = ceil($count/3);
+    $totalPages = ceil($companies.count/3);
 
    } catch (\Throwable $th) {
      echo "Připojení k databázi selhalo.\r Error: ". $th;
