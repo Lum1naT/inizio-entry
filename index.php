@@ -124,8 +124,18 @@ use \Doctrine\DBAL\DriverManager as ORM;
     </tbody>
   </table>
   <?php } else { ?>
-    
-    <h2> V databázi nebyly nalezeny žádné záznamy, zkuste přidat nový </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+    <h2 > V databázi nebyly nalezeny žádné záznamy, zkuste přidat nový </h2>
+
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
 
  <?php } ?>
 
