@@ -15,7 +15,10 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Sortable-Bootstrap-Tables-Bootstrap-Sortable/Contents/bootstrap-sortable.css" rel="stylesheet" type="text/css">
     <title>Inizio IČO entry</title>
   </head>
   <body>
@@ -55,7 +58,6 @@ use \Doctrine\DBAL\DriverManager as ORM;
   ?>
 
 <div class="container">
-<h1 class="text-center">jQuery Bootstrap Sortable Plugin Demos</h1>
   <table class="table table-bordered table-striped sortable">
     <caption>
     Optional table caption.
