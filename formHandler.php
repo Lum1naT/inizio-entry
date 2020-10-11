@@ -17,7 +17,7 @@ $a = array();
 if ($xml) {
  $ns = $xml->getDocNamespaces();
  $data = $xml->children($ns['are']);
- if(!empty(strval($data->children($ns['D'])->E))){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1'); }
+ if(!empty(strval($data->children($ns['D'])->E))){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1'); echo "OH NO!"; die;}
 
  $el = $data->children($ns['D'])->VBAS;
  if (strval($el->ICO) == $ico) {
