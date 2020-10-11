@@ -75,8 +75,10 @@ use \Doctrine\DBAL\DriverManager as ORM;
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    print_r($result);
   }
+
+  $count = $conn->executeStatement('SELECT * FROM firma');
+  $totalPages = ceil($count/3);
 
    } catch (\Throwable $th) {
      echo "Připojení k databázi selhalo.\r Error: ". $th;
@@ -132,9 +134,12 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <?php } ?>
 
     <li class="page-item active"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']); ?>'><?php echo $_GET['page']; ?></a></li>
+
+    <?php if(!($_GET['page'] >= $totalPages)) { ?>
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+1); ?>'><?php echo $_GET['page']+1; ?></a></li>
 
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+1); ?>'>Next</a></li>
+    <?php } ?>
   </ul>
 </nav>
 
