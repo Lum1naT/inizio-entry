@@ -89,7 +89,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
   
   ?>
-
+<?php if(count($companies) != 0){ ?>
 <div class="container">
   <table class="table table-bordered table-striped sortable">
     <thead>
@@ -123,6 +123,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
       
     </tbody>
   </table>
+  <?php } else { ?>
+    
+    <h2> V databázi nebyly nalezeny žádné záznamy, zkuste přidat nový </h2>
+
+ <?php } ?>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script> 
   <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Sortable-Bootstrap-Tables-Bootstrap-Sortable/Scripts/bootstrap-sortable.js"></script> 
