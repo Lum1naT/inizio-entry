@@ -41,7 +41,6 @@ if ($xml) {
 } else
 $_SESSION["error"] = 'Databáze ARES není dostupná';
 
-if(empty($_SESSION["error"])){
 
 
 try {
@@ -73,10 +72,7 @@ try {
     throw $a["state"]." Error:".$th;
 }
 
-} else {
-    $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  
-    header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1'); 
-}
+
 
 } else {
     echo "Chyba. Zkuste to prosím znovu.";
