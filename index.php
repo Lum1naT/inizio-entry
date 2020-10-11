@@ -68,6 +68,7 @@ $(document).ready(function(){
  $('#ico').change( function() {
    var ico = $(this).val();
    $.ajax({
+    type: "POST",
     url: "/formHandler.php",
     contentType: "application/json; charset=utf-8",
     dataType: "json", 
