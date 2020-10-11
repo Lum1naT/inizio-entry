@@ -15,9 +15,6 @@
     echo "Hello World";
     include_once './databaseManager.php';
     echo "<br>";
-    $url = "https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_std.cgi?ico=27074358";
-    $xml = simplexml_load_file($url);
-    print_r($xml);
 
     ?>
 
