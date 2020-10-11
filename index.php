@@ -48,7 +48,6 @@
     <input name="psc" class="form-control" type="text" pattern="[0-9]+" />
     </div>
     </form>
-    </form>
 
     <nav aria-label="Page navigation example">
   <ul class="pagination">
