@@ -1,6 +1,14 @@
+<?php 
+require_once('./vendor/autoload.php');
+use \Doctrine\DBAL\DriverManager as ORM;
+?>
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Sorting -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +32,9 @@
 
   <?php 
    try {
+
+
+
     $connectionParams = array(
       'url' => getenv('PGSQL_DATABASE_URL'),
       'driver' => 'pdo_pgsql',
