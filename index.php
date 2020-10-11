@@ -81,7 +81,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
     $companies = $conn->fetchAll('SELECT * FROM firma');
 
   
-    $totalPages = ceil($companies.count/3);
+    $totalPages = ceil(count($companies)/3);
 
    } catch (\Throwable $th) {
      echo "Připojení k databázi selhalo.\r Error: ". $th;
