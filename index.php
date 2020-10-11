@@ -77,7 +77,10 @@ use \Doctrine\DBAL\DriverManager as ORM;
     $result = $stmt->fetchAll();
   }
 
-  $count = $conn->executeStatement('SELECT * FROM firma');
+  
+    $query = $em->createQuery('SELECT COUNT(*) FROM firma');
+    $count = $query->getResult(); // array of ForumUser objects
+  
   $totalPages = ceil($count/3);
 
    } catch (\Throwable $th) {
