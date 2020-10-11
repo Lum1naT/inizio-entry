@@ -19,6 +19,7 @@ if ($xml) {
  $data = $xml->children($ns['are']);
  $el = $data->children($ns['D'])->VBAS;
  if (strval($el->ICO) == $ico) {
+    if(!empty(strval($el->ET))){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1');  }
   $a['ico'] 	= strval($el->ICO);
   $a['dic'] 	= strval($el->DIC);
   $a['name'] 	= strval($el->OF);
@@ -29,7 +30,7 @@ if ($xml) {
     }
   $a['city']	= strval($el->AA->N);
   $a['zip']	= strval($el->AA->PSC);
-  if(empty($a['ico'])){ $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1'); }
+  
   $a['state'] 	= 'ok';
  } else 
  $_SESSION["error"] = 'IČ firmy nebylo nalezeno';
