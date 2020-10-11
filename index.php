@@ -28,24 +28,24 @@
     </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="dic" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    <input name="dic" class="form-control" type="text" pattern="[0-9]+" />
     </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="firma" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    <input name="firma" class="form-control" type="text" pattern="[0-9]+" />
     </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="ulice" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    <input name="ulice" class="form-control" type="text" pattern="[0-9]+" />
     </div>
     </form>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="mesto" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    <input name="mesto" class="form-control" type="text" pattern="[0-9]+" />
     </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="psc" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    <input name="psc" class="form-control" type="text" pattern="[0-9]+" p/>
     </div>
     </form>
     </form>

@@ -1,6 +1,6 @@
 <?php
 
-eader("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
 define('ARES','http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=');
 $ico = intval($_REQUEST['ico']);
 $file = @file_get_contents(ARES.$ico);
