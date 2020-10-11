@@ -2,7 +2,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 define('ARES','http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=');
-$ico = intval($_REQUEST['ico']);
+$ico = intval($_POST['ico']);
 $file = @file_get_contents(ARES.$ico);
 if ($file) $xml = @simplexml_load_string($file);
 $a = array();
@@ -22,4 +22,6 @@ if ($xml) {
   $a['stav'] 	= 'IČ firmy nebylo nalezeno';
 } else
  $a['stav'] 	= 'Databáze ARES není dostupná';
-echo json_encode($a);
+
+print_r($a);
+//echo json_encode($a);
