@@ -72,7 +72,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
   if(!empty($conn)){
     $orderBy = $_GET['orderBy'];
     if($_GET['page'] > 0){
-      $sql = "SELECT * FROM firma ORDER BY ".$orderBy." LIMIT 3 OFFSET ".(($_GET['page']*3)-3);
+      $sql = "SELECT * FROM firma ORDER BY ".$orderBy." DESC LIMIT 3 OFFSET ".(($_GET['page']*3)-3);
     }
     
     $stmt = $conn->prepare($sql);
