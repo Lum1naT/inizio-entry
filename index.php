@@ -1,6 +1,6 @@
 <?php 
 if(empty($_GET['orderBy'])){
-  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name');
+  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1');
 }
 require_once('./vendor/autoload.php');
 use \Doctrine\DBAL\DriverManager as ORM;
@@ -69,9 +69,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
   if(!empty($conn)){
     $orderBy = $_GET['orderBy'];
     if($_GET['page'] > 0){
-      $sql = "SELECT * FROM firma ORDER BY ".$orderBy." LIMIT 3 OFFSET ".($_GET['page']*3);
-    } else {
-      $sql = "SELECT * FROM firma ORDER BY ".$orderBy." LIMIT 3";
+      $sql = "SELECT * FROM firma ORDER BY ".$orderBy." LIMIT 3 OFFSET ".(($_GET['page']*3)-3);
     }
     
     $stmt = $conn->prepare($sql);
@@ -131,9 +129,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <?php if($_GET['page'] > 0){ ?>
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']-1); ?>'>Previous</a></li> 
     <?php } ?>
-    <li class="page-item"><a class="page-link" href="/#1">1</a></li>
-    <li class="page-item"><a class="page-link" href="/#2">2</a></li>
-    <li class="page-item"><a class="page-link" href="/#3">3</a></li>
+
+    <li class="page-item active"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']); ?>'><?php echo $_GET['page']; ?></a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+1); ?>'><?php echo $_GET['page']+1; ?></a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+2); ?>'><?php echo $_GET['page']+2; ?></a></li>
+
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']+1); ?>'>Next</a></li>
   </ul>
 </nav>
