@@ -45,7 +45,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
         </div>
     <div class="col-sm">
     <a href="/?orderBy=name"> Seřadit dle jména </a><br>
-    <a href="/?orderBy=date"> Seřadit dle data vyhledání </a><br>
+    <a href="/?orderBy=published"> Seřadit dle data vyhledání </a><br>
 
     </div>
   </div>
@@ -67,10 +67,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
   $conn = ORM::getConnection($connectionParams);
   
   if(!empty($conn)){
+    $orderBy = $_GET['orderBy'];
     if($_GET['page'] > 0){
-      $sql = "SELECT * FROM firma LIMIT 3 OFFSET ".$_GET['page']*3;
+      $sql = "SELECT * FROM firma LIMIT 3 OFFSET ".($_GET['page']*3)." ORDER BY ".$orderBy;
     } else {
-      $sql = "SELECT * FROM firma LIMIT 3";
+      $sql = "SELECT * FROM firma LIMIT 3 ORDER BY ".$orderBy;
     }
     
     $stmt = $conn->prepare($sql);
