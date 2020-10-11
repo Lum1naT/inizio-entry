@@ -106,23 +106,18 @@ use \Doctrine\DBAL\DriverManager as ORM;
     <?php 
     foreach ($result as $firma) {
       echo "<tr>
-      <td> {{$firma['published']}} </td>
-      <td> {{$firma['ico']}} </td>
-      <td> {{$firma['dic']}} </td>
-      <td> {{$firma['name']}} </td>
-      <td> {{$firma['street']}} </td>
-      <td> {{$firma['city']}} </td>
-      <td> {{$firma['zip']}} </td>
+      <td> {$firma['published']} </td>
+      <td> {$firma['ico']} </td>
+      <td> {$firma['dic']} </td>
+      <td> {$firma['name']} </td>
+      <td> {$firma['street']} </td>
+      <td> {$firma['city']} </td>
+      <td> {$firma['zip']} </td>
       
       </tr>";
     } 
     ?>
-      <tr>
-        <td data-value="1">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td data-dateformat="DD-MM-YYYY h:i:s"><?php ?></td>
-      </tr>
+    
       
     </tbody>
   </table>
