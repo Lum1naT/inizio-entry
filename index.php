@@ -44,8 +44,8 @@ use \Doctrine\DBAL\DriverManager as ORM;
     
         </div>
     <div class="col-sm">
-    <a href="/?orderBy=name"> Seřadit dle jména </a><br>
-    <a href="/?orderBy=published"> Seřadit dle data vyhledání </a><br>
+    <a href="/?orderBy=name&page=1"> Seřadit dle jména </a><br>
+    <a href="/?orderBy=published&page=1"> Seřadit dle data vyhledání </a><br>
 
     </div>
   </div>
