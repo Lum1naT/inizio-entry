@@ -74,7 +74,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
     }
     
     $stmt = $conn->prepare($sql);
-    $stmt = $stmt->execute();
+    $stmt->execute();
     $result = $stmt->fetchAll();
     print_r($result);
   }
