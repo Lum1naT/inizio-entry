@@ -20,7 +20,7 @@ if ($xml) {
  if(!empty(strval($data->children($ns['D'])->E))){ 
     $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  
     header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1'); 
-    die;}
+    }
 
  $el = $data->children($ns['D'])->VBAS;
  if (strval($el->ICO) == $ico) {
@@ -40,6 +40,9 @@ if ($xml) {
  $_SESSION["error"] = 'IČ firmy nebylo nalezeno';
 } else
 $_SESSION["error"] = 'Databáze ARES není dostupná';
+
+if(empty($_SESSION["error"])){
+
 
 try {
 
@@ -65,9 +68,14 @@ try {
                                             'city' => $a['city'],
                                             'zip' => $a['zip']));
 
-  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=name&page=1');
+  header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1');
 } catch (\Throwable $th) {
     throw $a["state"]." Error:".$th;
+}
+
+} else {
+    $_SESSION["error"] = 'IČ firmy nebylo nalezeno';  
+    header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1'); 
 }
 
 } else {
