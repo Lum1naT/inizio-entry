@@ -21,6 +21,35 @@
 
     ?>
 
+    <form>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input id="ico" name="ico" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="dic" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="firma" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="ulice" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    </div>
+    </form>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="mesto" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="psc" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO" />
+    </div>
+    </form>
+    </form>
+
     <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href='<?php echo "/?page=".($_GET['page']-1); ?>'>Previous</a></li>
@@ -30,6 +59,33 @@
     <li class="page-item"><a class="page-link" href='<?php echo "/?page=".($_GET['page']+1); ?>'>Next</a></li>
   </ul>
 </nav>
+
+<script type='text/javascript'>
+
+$(document).ready(function(){
+ $('#ico').change( function() {
+   var ico = $(this).val();
+   $.ajax({
+    url: "/formHandler.php",
+    contentType: "application/json; charset=utf-8",
+    dataType: "json", 
+    data: "ico="+ico,
+    cache: false,
+    success: function(data) {
+     if (data.stav == 'ok') {
+      $('input[name=dic]').val(data.dic);
+      $('input[name=firma]').val(data.firma);
+      $('input[name=ulice]').val(data.ulice);
+      $('input[name=mesto]').val(data.mesto);
+      $('input[name=psc]').val(data.psc);
+      alert('Název a sídlo firmy bylo vyplněno z databáze ARES.');
+     } else {
+      alert(data.stav);
+     }
+    },
+   });
+  });
+ }
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
