@@ -23,15 +23,32 @@ use \Doctrine\DBAL\DriverManager as ORM;
   </head>
   <body>
    
+  <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      
+    </div>
+    <div class="col-sm">
 
     <form action="/formHandler.php" method="post">
     <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="exampleInputEmail1">IČO: </label>
     <input name="ico" class="form-control" type="text" pattern="[0-9]+" id="ico" placeholder="Zadejte IČO">
     </div>
     <button type="submit" class="btn btn-primary">Hledat</button>
     
     </form>
+    
+        </div>
+    <div class="col-sm">
+    <a href="/?orderBy=name"> Seřadit dle jména </a>
+    <a href="/?orderBy=date"> Seřadit dle data vyhledání </a>
+
+    </div>
+  </div>
+</div>
+
+    
 
   <?php 
    try {
@@ -46,7 +63,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
   $conn = ORM::getConnection($connectionParams);
   
   if(!empty($conn)){
-      echo "Připojeno k DB.";
+      
   }
 
    } catch (\Throwable $th) {
@@ -98,11 +115,11 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
     <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item"><a class="page-link" href='<?php echo "/?page=".($_GET['page']-1); ?>'>Previous</a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI'].($_GET['page']-1); ?>'>Previous</a></li>
     <li class="page-item"><a class="page-link" href="/#1">1</a></li>
     <li class="page-item"><a class="page-link" href="/#2">2</a></li>
     <li class="page-item"><a class="page-link" href="/#3">3</a></li>
-    <li class="page-item"><a class="page-link" href='<?php echo "/?page=".($_GET['page']+1); ?>'>Next</a></li>
+    <li class="page-item"><a class="page-link" href='<?php echo $_SERVER['REQUEST_URI'].($_GET['page']+1); ?>'>Next</a></li>
   </ul>
 </nav>
 
