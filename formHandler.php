@@ -14,7 +14,11 @@ if ($xml) {
   $a['ico'] 	= strval($el->ICO);
   $a['dic'] 	= strval($el->DIC);
   $a['firma'] 	= strval($el->OF);
-  $a['ulice']	= strval($el->AA->NU).' '.strval($el->AA->CO);
+  if(!empty($el->AA->NU)){
+      $a['ulice']	= strval($el->AA->NU).' '.strval($el->AA->CD);
+    } else {
+        $a['ulice']	= strval($el->AA->N).' '.strval($el->AA->CD);
+    }
   $a['mesto']	= strval($el->AA->N);
   $a['psc']	= strval($el->AA->PSC);
   $a['stav'] 	= 'ok';
