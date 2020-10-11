@@ -84,7 +84,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
      echo "Připojení k databázi selhalo.\r Error: ". $th;
    }
 
-   $isNotLast = ($_GET['page'] >= $totalPages);
+   $isNotLast = ($_GET['page'] = $totalPages);
   
   ?>
 
