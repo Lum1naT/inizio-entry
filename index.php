@@ -45,7 +45,7 @@
     </div>
     <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input name="psc" class="form-control" type="text" pattern="[0-9]+" p/>
+    <input name="psc" class="form-control" type="text" pattern="[0-9]+" />
     </div>
     </form>
     </form>
