@@ -63,10 +63,19 @@ use \Doctrine\DBAL\DriverManager as ORM;
       'driver' => 'pdo_pgsql',
   
     );
+
   $conn = ORM::getConnection($connectionParams);
   
   if(!empty($conn)){
-      
+    if($_GET['page'] > 0){
+      $sql = "SELECT * FROM firma LIMIT 3 OFFSET ".$_GET['page']*3;
+    } else {
+      $sql = "SELECT * FROM firma LIMIT 3";
+    }
+    
+    $stmt = $conn->prepare($sql);
+    $result = $stmt->execute();
+    print_r($result);
   }
 
    } catch (\Throwable $th) {
@@ -79,15 +88,16 @@ use \Doctrine\DBAL\DriverManager as ORM;
 
 <div class="container">
   <table class="table table-bordered table-striped sortable">
-    <caption>
-    Optional table caption.
-    </caption>
     <thead>
       <tr>
-        <th data-defaultsign="_19">#</th>
-        <th data-defaultsign="AZ">First Name</th>
-        <th>Last Name</th>
-        <th data-defaultsign="month">Birthday</th>
+      <th data-defaultsign="month">Čas vyhledání</th>
+      <th data-defaultsign="_19">IČO</th>
+      <th data-defaultsign="_19">DIČ</th>
+        <th data-defaultsign="AZ">Název Firmy</th>
+        <th data-defaultsign="AZ">Ulice</th>
+        <th data-defaultsign="AZ">Město</th>
+        <th data-defaultsign="AZ">PSČ</th>
+
       </tr>
     </thead>
     <tbody>
@@ -95,20 +105,9 @@ use \Doctrine\DBAL\DriverManager as ORM;
         <td data-value="1">1</th>
         <td>Mark</td>
         <td>Otto</td>
-        <td data-dateformat="MM-DD-YYYY">11-11-1970</td>
+        <td data-dateformat="DD-MM-YYYY h:i:s"><?php ?></td>
       </tr>
-      <tr>
-        <td  data-value="2">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td data-dateformat="MM-DD-YYYY">11-11-1980</td>
-      </tr>
-      <tr>
-        <td data-value="3">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td data-dateformat="MM-DD-YYYY">11-11-1960</td>
-      </tr>
+      
     </tbody>
   </table>
 
