@@ -128,7 +128,7 @@ use \Doctrine\DBAL\DriverManager as ORM;
   <ul class="pagination">
     <?php if($_GET['page'] > 1){ ?>
     <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']-1); ?>'>Previous</a></li>
-    <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']-1); ?>'><?php echo $_GET['page']+1; ?></a></li> 
+    <li class="page-item"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']-1); ?>'><?php echo $_GET['page']-1; ?></a></li> 
     <?php } ?>
 
     <li class="page-item active"><a class="page-link" href='<?php echo "/?orderBy=".$_GET['orderBy']."&"."page=".($_GET['page']); ?>'><?php echo $_GET['page']; ?></a></li>
