@@ -26,27 +26,8 @@
     <label for="exampleInputEmail1">Email address</label>
     <input id="ico" name="ico" class="form-control" type="text" pattern="[0-9]+" placeholder="Zadejte IČO">
     </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="dic" class="form-control" type="text">
-    </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="firma" class="form-control" type="text">
-    </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="ulice" class="form-control" type="text">
-    </div>
-    </form>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="mesto" class="form-control" type="text">
-    </div>
-    <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input name="psc" class="form-control" type="text">
-    </div>
+    
+    
     </form>
 
     <nav aria-label="Page navigation example">
