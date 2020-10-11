@@ -18,19 +18,19 @@ if ($xml) {
  if (strval($el->ICO) == $ico) {
   $a['ico'] 	= strval($el->ICO);
   $a['dic'] 	= strval($el->DIC);
-  $a['firma'] 	= strval($el->OF);
+  $a['name'] 	= strval($el->OF);
   if(!empty($el->AA->NU)){
-      $a['ulice']	= strval($el->AA->NU).' '.strval($el->AA->CD);
+      $a['street']	= strval($el->AA->NU).' '.strval($el->AA->CD);
     } else {
-        $a['ulice']	= strval($el->AA->N).' '.strval($el->AA->CD);
+        $a['street']	= strval($el->AA->N).' '.strval($el->AA->CD);
     }
-  $a['mesto']	= strval($el->AA->N);
-  $a['psc']	= strval($el->AA->PSC);
-  $a['stav'] 	= 'ok';
+  $a['city']	= strval($el->AA->N);
+  $a['zip']	= strval($el->AA->PSC);
+  $a['state'] 	= 'ok';
  } else
-  $a['stav'] 	= 'IČ firmy nebylo nalezeno';
+  $a['state'] 	= 'IČ firmy nebylo nalezeno';
 } else
- $a['stav'] 	= 'Databáze ARES není dostupná';
+ $a['state'] 	= 'Databáze ARES není dostupná';
 
 try {
 
@@ -47,11 +47,17 @@ try {
     
     $t = time();
 
-    // $count = $conn->insert('firma', array('ico' => '9087089', 'published' => date("d-m-Y h:i:s",$t), 'data' => $data));
-    // echo "\r inserted {{$count}} rows";
+    $count = $conn->insert('firma', array('ico' => $a['ico'], 
+                                            'published' => date("d-m-Y h:i:s",$t),
+                                            'dic' => $a['dic'],                                           
+                                            'name' => $a['name'],
+                                            'street' => $a['street'],
+                                            'city' => $a['city'],
+                                            'zip' => $a['zip']));
+    echo "\r inserted {{$count}} rows";
 
 } catch (\Throwable $th) {
-    throw $th;
+    throw $a["state"]." Error:".$th;
 }
 
 //echo json_encode($a);
