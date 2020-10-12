@@ -94,27 +94,10 @@ use \Doctrine\DBAL\DriverManager as ORM;
   ?>
 <?php if(count($companies) != 0){ ?>
 <hr>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-    <form action="" method="get">
-    <div class="form-group">
-    <input name="firma" class="form-control" type="text" id="firma" placeholder="Hledat dle firmy"> <button type="submit" class="btn btn-primary">Hledat</button>
-    </div>
-    
-    </div>
-    <div class="col-sm">
 
     
-        </div>
-    <div class="col-sm">
-    
    
-    
-    </form>
-    </div>
-  </div>
-</div>
+
 <div class="container">
   <table class="table table-bordered table-striped sortable">
     <thead>
