@@ -60,7 +60,7 @@ try {
 
 
     $count = $conn->insert('firma', array('ico' => $a['ico'], 
-                                            'published' => date("d-m-Y H:i:s",$t),
+                                            'published' => date("Y-m-d H:i:s",$t),
                                             'dic' => $a['dic'],                                           
                                             'name' => $a['name'],
                                             'street' => $a['street'],
