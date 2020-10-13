@@ -69,7 +69,7 @@ try {
 
   header('Location: https://vast-garden-09239.herokuapp.com/?orderBy=published&page=1');
 } catch (\Throwable $th) {
-    throw $a["state"]." Error:".$th;
+    echo $a["state"]." Error:".$th;
 }
 
 
